@@ -1,4 +1,4 @@
-package main// Copyright 2016 The Go Authors. All rights reserved.
+package main // Copyright 2016 The Go Authors. All rights reserved.
 import (
 	"context"
 	"errors"
@@ -169,3 +169,6 @@ func TestWithContext(t *testing.T) {
 	}
 }
 
+func TestSliceDate(t *testing.T) {
+
+}

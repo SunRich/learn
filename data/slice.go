@@ -25,7 +25,8 @@ import (
 
 
 func main() {
-
+	s := []int{0, 1, 2, 3}
+	fmt.Println(s[:len(s)])
 	var slice []int32 = make([]int32, 5, 10)
 
 	p := (*struct {
