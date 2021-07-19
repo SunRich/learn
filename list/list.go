@@ -39,7 +39,7 @@ func BuildCycleList() *ListNode {
 
 	node4.next = node5
 
-	node5.next = node2
+	node5.next = node3
 	return node1
 }
 
@@ -102,18 +102,22 @@ func HasCycleUseFS(head *ListNode) bool {
 	if head == nil {
 		return false
 	}
-	fast := head.next.next
+	fast := head
 	slow := head
-	for fast != nil && slow != nil {
-		if fast == slow {
-			cycleNode := GetCycleNodeByFS(fast, head)
-			if cycleNode != nil {
-				fmt.Println(cycleNode.value)
-			}
-			return true
-		}
+	for fast != nil && fast.next != nil {
 		slow = slow.next
 		fast = fast.next.next
+		if fast == slow {
+			fast = head
+			for slow != fast {
+				slow = slow.next
+				fast = fast.next
+			}
+			if fast == slow {
+				fmt.Println(fast.value)
+				return true
+			}
+		}
 	}
 	return false
 }
