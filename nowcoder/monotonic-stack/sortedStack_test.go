@@ -6,7 +6,8 @@ import (
 )
 
 func TestSortedStack(t *testing.T) {
-	result := FindNumbersLeftRightFirstMax([]int{1, 5,3,6,4})
-	fmt.Println(FindLeftFirstMaxByLeftRight(result))
+	result := FindUnsortedSubarray([]int{1,2,3,4})
+
+
 	fmt.Println(result)
 }

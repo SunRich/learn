@@ -1,13 +1,32 @@
 package monotonic_stack
 
+import "fmt"
+
 type LeftRight struct {
 	Left  int
 	Right int
 	Index int
 }
-
-func findUnsortedSubarray(nums []int) int {
-	return 0
+// FindUnsortedSubarray nums = [2,6,4,8,10,9,15]
+func FindUnsortedSubarray(nums []int) int {
+	left:=0
+	right:=-1
+	leftMax:=nums[0]
+	rightMix:=nums[len(nums)-1]
+	for i:=0;i<len(nums);i++{
+		if leftMax<=nums[i] {
+			leftMax =nums[i]
+		}else{
+			right=i
+		}
+		if rightMix>=nums[len(nums)-1-i] {
+			rightMix =nums[len(nums)-1-i]
+		}else{
+			left=len(nums)-1-i
+		}
+	}
+	fmt.Println(right,left)
+	return right-left+1
 }
 
 func FindLeftFirstMaxByLeftRight(leftRight []LeftRight) (result []int) {
@@ -18,7 +37,7 @@ func FindLeftFirstMaxByLeftRight(leftRight []LeftRight) (result []int) {
 	return
 }
 
-//通过单调栈获取数组元素左右两边大于该元素的值
+// FindNumbersLeftRightFirstMax 通过单调栈获取数组元素左右两边大于该元素的值
 func FindNumbersLeftRightFirstMax(nums []int) []LeftRight {
 	result := make([]LeftRight, 0)
 	if len(nums) == 0 {

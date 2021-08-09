@@ -1,5 +1,7 @@
 package sort
 
+import "fmt"
+
 type ArraySort struct {
 	List   []int64
 	Length int
@@ -83,13 +85,14 @@ func Quick(result []int64, left, right int) {
 	if left >= right {
 		return
 	}
-	pivotIndex := parttion(result, left, right)
+	pivotIndex := partition(result, left, right)
+	fmt.Println(pivotIndex)
 	Quick(result, left, pivotIndex-1)
 	Quick(result, pivotIndex+1, right)
 
 }
 
-func parttion(result []int64, left, right int) int {
+func partition(result []int64, left, right int) int {
 	pivot := left
 	index := pivot + 1
 	for i := index; i <= right; i++ {

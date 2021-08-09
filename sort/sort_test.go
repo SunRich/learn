@@ -14,7 +14,7 @@ func TestList_BubbleSort(t *testing.T) {
 	fmt.Println(result, list.List)
 	result = list.InsertSort()
 	fmt.Println(result, list.List)*/
-
+	fmt.Println(5>>1)
 	result  := list.QuickSort()
 	fmt.Println(result, list.List)
 }
