@@ -86,7 +86,7 @@ func Quick(result []int64, left, right int) {
 		return
 	}
 	pivotIndex := partition(result, left, right)
-	fmt.Println(pivotIndex)
+	fmt.Println(pivotIndex,result[pivotIndex])
 	Quick(result, left, pivotIndex-1)
 	Quick(result, pivotIndex+1, right)
 

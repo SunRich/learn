@@ -6,7 +6,7 @@ import (
 )
 
 func TestList_BubbleSort(t *testing.T) {
-	list := NewArraySort([]int64{0, 1, 7, 2, 9, 3, 8})
+	list := NewArraySort([]int64{8,0, 1, 7, 2, 9, 3})
 	/*result := list.BubbleSort()
 	fmt.Println(result, list.List)
 
