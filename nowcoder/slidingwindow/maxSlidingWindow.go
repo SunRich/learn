@@ -93,14 +93,14 @@ func MaxSlidingWindow2(nums []int, k int) []int {
 	stack = make([]int, k, k)
 	for i, num := range nums {
 		//先尝试右边从尾部入栈
-		for len(stack) >0 && num >= nums[stack[len(stack)-1]]  {
+		for len(stack) > 0 && num >= nums[stack[len(stack)-1]] {
 			stack = stack[:len(stack)-1]
 		}
 		stack = append(stack, i)
 		if i-k+1 > stack[0] {
 			stack = stack[1:]
 		}
-		if i+1>=k{
+		if i+1 >= k {
 			result = append(result, nums[stack[0]])
 		}
 	}
