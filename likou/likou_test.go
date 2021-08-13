@@ -70,3 +70,19 @@ func TestThreeSum(t *testing.T) {
 func TestSubsets(t *testing.T)  {
 	fmt.Println(subsets([]int{1,2,3}))
 }
+
+func TestMyPow(t *testing.T)  {
+	fmt.Println(myPow(4,-2))
+}
+
+func TestConstructor(t *testing.T) {
+	l:=Constructor(2)
+	l.Put(1,1)
+	l.Put(2,2)
+	fmt.Println("1",l.tail.prev.key)
+	l.Get(1)
+	fmt.Println("2",l.tail.prev.key)
+	l.Put(3,3)
+	fmt.Println(l.Get(2))
+
+}

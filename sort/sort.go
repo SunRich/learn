@@ -1,7 +1,5 @@
 package sort
 
-import "fmt"
-
 type ArraySort struct {
 	List   []int64
 	Length int
@@ -50,7 +48,7 @@ func (l *ArraySort) SelectSort() (result []int64) {
 	for i := 0; i < l.Length-1; i++ {
 		minIndex := i
 		for j := i + 1; j < l.Length; j++ {
-			if result[minIndex] > result[j] {
+			if result[j] < result[minIndex] {
 				minIndex = j
 			}
 		}
@@ -86,7 +84,6 @@ func Quick(result []int64, left, right int) {
 		return
 	}
 	pivotIndex := partition(result, left, right)
-	fmt.Println(pivotIndex,result[pivotIndex])
 	Quick(result, left, pivotIndex-1)
 	Quick(result, pivotIndex+1, right)
 
@@ -103,4 +100,38 @@ func partition(result []int64, left, right int) int {
 	}
 	swap(result, pivot, index-1)
 	return index - 1
+}
+
+func (l *ArraySort) HeapSort() (result []int64) {
+	result = l.copy()
+	buildHeap(result,len(result))
+	for i:=len(result)-1;i>=0;i-- {
+		swap(result,0,i)
+		heapify(result,0,i)
+
+	}
+	Quick(result, 0, l.Length-1)
+	return
+}
+
+func buildHeap(result []int64, length int) {
+	for i:=(length>>1)-1;i>=0;i--{
+		heapify(result,i,length)
+	}
+
+}
+func heapify(result []int64, i, length int) {
+	left := 2*i + 1
+	right := 2*i + 2
+	largest := i
+	if left < length && result[left] > result[largest] {
+		largest = left
+	}
+	if right < length && result[right] > result[largest] {
+		largest = right
+	}
+	if largest != i {
+		swap(result, i, largest)
+		heapify(result,largest,length)
+	}
 }
