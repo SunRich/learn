@@ -25,8 +25,11 @@ func init() {
 }
 
 func TestReverseList(t *testing.T) {
+
 	head.Print()
 	newHead := ReverseList(head)
+	fmt.Println("\n","after")
+
 	newHead.Print()
 
 }

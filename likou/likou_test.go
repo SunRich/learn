@@ -86,3 +86,7 @@ func TestConstructor(t *testing.T) {
 	fmt.Println(l.Get(2))
 
 }
+
+func TestSearch(t *testing.T) {
+	fmt.Println(search([]int{5},5))
+}

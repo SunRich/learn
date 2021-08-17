@@ -49,12 +49,9 @@ func ReverseList(head *ListNode) *ListNode {
 	}
 	var pre *ListNode
 	var temp *ListNode
-	for {
-		if head == nil {
-			break
-		}
+	for head != nil {
 		temp = head.next
-		head.next = pre
+		head.next = pre//切断然后连接
 		pre = head
 		head = temp
 	}
