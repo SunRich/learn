@@ -90,3 +90,8 @@ func TestConstructor(t *testing.T) {
 func TestSearch(t *testing.T) {
 	fmt.Println(search([]int{5},5))
 }
+
+func TestGenerateParenthesis(t *testing.T) {
+	result:=GenerateParenthesis(2)
+	fmt.Println(result)
+}

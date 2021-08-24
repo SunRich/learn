@@ -1,5 +1,6 @@
 package likou
 
+//169. 多数元素
 func majorityElement(nums []int) int {
 	count:=map[int]int{}
 	for _,v:=range nums{
