@@ -158,10 +158,10 @@ func minDepth(root *TreeNode) int {
 	}
 
 	if root.Left != nil {
-		minD = min(minDepth(root.Left), minD)
+		minD = mix(minDepth(root.Left), minD)
 	}
 	if root.Right != nil {
-		minD = min(minDepth(root.Right), minD)
+		minD = mix(minDepth(root.Right), minD)
 	}
 
 	return minD + 1

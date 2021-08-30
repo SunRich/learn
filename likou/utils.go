@@ -1,11 +1,12 @@
 package likou
 
-func min(x, y int) int {
-	if x < y {
-		return x
+func mix(x, y int) int {
+	if x > y {
+		return y
 	}
-	return y
+	return x
 }
+
 
 func max(x, y int) int {
 	if x < y {

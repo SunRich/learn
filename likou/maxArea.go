@@ -39,12 +39,6 @@ func process2(height []int) int {
 	return max
 }
 
-func mix(x, y int) int {
-	if x > y {
-		return y
-	}
-	return x
-}
 
 func MaxArea(height []int) int {
 	return maxArea(height)
